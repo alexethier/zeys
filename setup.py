@@ -18,7 +18,7 @@ for root, dirs, files in os.walk("." + os.path.sep + project_name, topdown=True,
 setup(
   name=project_name,
   version='0.0.1',
-  description='Simple Python Prompt',
+  description='Detect keyboard inputs.',
   url='https://github.com/alexethier/zeys',
   author='Alex Ethier',
   author_email='aethier@gmail.com',

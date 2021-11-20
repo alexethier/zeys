@@ -1,8 +1,3 @@
-import io
-import sys
-import time
-import msvcrt
-
 DELETE_CHAR='\x7f'
 RETURN_CHAR='\r'
 #NEWLINE_CHAR='\n'
@@ -14,7 +9,10 @@ SPEED = 0.03
 class NtDetector:
 
   def __init__(self):
-    pass
+    import io
+    import sys
+    import time
+    import msvcrt
 
   def _has_data(self):
     return msvcrt.kbhit()
