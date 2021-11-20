@@ -1,0 +1,3 @@
+Support multiple key sequences mapping to the same output special word
+This will allow the backspace and delete keys on a window board to output the same symbol
+This will require updating the special key map to map to a list of sequences instead of a single sequence
