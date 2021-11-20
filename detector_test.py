@@ -8,7 +8,7 @@ class Boot:
 
   def boot(self):
 
-    sys.stdout.write("Example prompt: ")
+    sys.stdout.write("Test Keyboad Detection: ")
     sys.stdout.flush()
     detector = Detector()
     stream = detector.run()

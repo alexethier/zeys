@@ -1,5 +1,5 @@
 import sys
-from zeys.api.arrow_selection_prompt import ArrowSelectionPrompt
+from zeys.api.detector import Detector
 
 class Runner:
 
@@ -10,7 +10,6 @@ class Runner:
 
     detector = Detector()
     stream = detector.run()
-    print()
     for output in stream:
       print(str(output))
       sys.stdout.flush()

@@ -35,5 +35,8 @@ setup(
       'Programming Language :: Python :: 3.5',
   ],
   entry_points={
+      'console_scripts': [
+          'zeys=zeys.run.runner:main',
+      ],
   },
 )
