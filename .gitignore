@@ -2,6 +2,9 @@
 backup.file
 .idea/
 /**/*.swp
+/**/*.py~
+/**/*.un~
+/**/*.gitignore~
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

@@ -4,7 +4,6 @@ import time
 import select
 import termios
 import tty
-import string
 
 DELETE_CHAR='\x7f'
 ENTER_CHAR='\n'
@@ -116,6 +115,7 @@ class PosixDetector:
           skip = skip -1
         else:
           item = capture_group[index]
+          #print("ordinal: " + str(item))
           special_key = self._check_special_keys(index, capture_group)
           if(special_key is not None):
             skip = len(self._special_key_map[special_key]) - 1
