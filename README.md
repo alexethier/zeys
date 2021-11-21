@@ -2,12 +2,13 @@
 *zeys* is library for detecting typed keys in Python.
 
 # Zeys features
-* Pure python
-* No dependencies
-* Windows NT and Posix support (Linux and MacOS)
 * Detect individual alphanumeric keys typed
-* Detect special keys typed (enter, arrow keys, etc)
+* Detect special keys typed (enter, backspace, arrow keys, etc)
 * Customizable output when special keys are typed.
+* Pure python
+* Windows NT and Posix support (Linux and MacOS)
+* No dependencies
+* No root or admin required
 
 # Installation
 ```
@@ -48,6 +49,3 @@ In the example above a keyboard is setup on a Linux OS. When the user types the 
 To determine the numerical sequences outputted by a key press you can create a detector with the `print_group` option set to true like so: `detector = Detector(print_group=True)`. On any key press, the sequence of numbers outputted on each key typed will be printed to the terminal. These outputs can be used to configure custom special key values.
 
 Some special keys will not trigger any output. These include `shift`, `caps lock`, and possibly others.
-
-# Philosophy
-Detecting the keys a user has typed into stdin should be easy and simple to use. It should not require root or any additional python installs. Complex issues between the Python runtime and the OS should be fully masked by the library.
