@@ -12,7 +12,8 @@ DEFAULT_SPEED = 0.03
 
 class NtDetector:
 
-  def __init__(self, special_key_map=None, speed=None):
+  def __init__(self, print_group=False, special_key_map=None, speed=None):
+    self._print_group = print_group
     if(special_key_map is None):
       special_key_map = self.get_default_special_key_map()
     if(speed is None):
@@ -32,6 +33,8 @@ class NtDetector:
     char_map["esc"] = [ ord(ESC_CHAR) ]
     char_map["tab"] = [ ord(TAB_CHAR) ]
     char_map["delete"] = [ 8 ]
+    char_map["delete"] = [ 0, 83 ]
+    char_map["delete"] = [ 224, 83 ]
     char_map["arrow-up"] = [ 224, 72 ]
     char_map["arrow-down"] = [ 224, 80 ]
     char_map["arrow-right"] = [ 224, 77 ]
@@ -101,6 +104,8 @@ class NtDetector:
 
     capture_generator = self._capture()
     for capture_group in capture_generator:
+      if(self._print_group):
+        print("stdin input sequence: " + str(capture_group))
       skip = 0
       for index in range(0, len(capture_group)):
         if(skip > 0):

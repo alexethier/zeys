@@ -45,5 +45,9 @@ detector = PosixDetector(special_keys)
 ```
 In the example above a keyboard is setup on a Linux OS. When the user types the up arrow key, the keyboard provides 3 inputs to stdin: 27, 91, and 65. Note that the three numbers are keyboard specific and can vary across systems. In this example the `add_mapping` call is used to translate this sequence to output the text `arrow-up` whenever the up arrow key is typed.
 
+To determine the numerical sequences outputted by a key press you can create a detector with the `print_group` option set to true like so: `detector = Detector(print_group=True)`. On any key press, the sequence of numbers outputted on each key typed will be printed to the terminal. These outputs can be used to configure custom special key values.
+
+Some special keys will not trigger any output. These include `shift`, `caps lock`, and possibly others.
+
 # Philosophy
 Detecting the keys a user has typed into stdin should be easy and simple to use. It should not require root or any additional python installs. Complex issues between the Python runtime and the OS should be fully masked by the library.

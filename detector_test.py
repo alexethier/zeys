@@ -8,9 +8,13 @@ class Boot:
 
   def boot(self):
 
+    print_group = False
+    if("-v" in sys.argv):
+      print_group = True
+
     sys.stdout.write("Test Keyboad Detection: ")
     sys.stdout.flush()
-    detector = Detector()
+    detector = Detector(print_group=print_group)
     stream = detector.run()
     print()
     for output in stream:

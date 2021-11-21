@@ -15,7 +15,8 @@ DEFAULT_SPEED = 0.03
 
 class PosixDetector:
 
-  def __init__(self, special_keys=None, speed=None):
+  def __init__(self, print_group=False, special_keys=None, speed=None):
+    self._print_group = print_group
     self._special_keys = special_keys
     self._speed = speed
 
