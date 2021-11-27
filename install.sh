@@ -68,8 +68,11 @@ if [ "$TEST_DEPLOY" == "true" ]; then
 fi
 
 if [ "$PROD_DEPLOY" == "true" ]; then
-  echo "TODO"
-  exit 1
+  echo "Uploading to Production PyPi"
+  twine upload dist/*
+  pip list | tr -s ' ' | grep -e "^$PROJECT_NAME " | cut -d' ' -f1 | xargs -I {} pip uninstall -y {} || true
+  echo "Reinstalling from test pypi"
+  pip install $PROJECT_NAME
 fi
 
 if [ "$SKIP_CLEANUP" == "false" ]; then

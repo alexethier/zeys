@@ -21,7 +21,7 @@ long_description = (this_directory / "README.md").read_text()
 
 setup(
   name=project_name,
-  version='0.0.3',
+  version='0.1.0',
   description='Detect keyboard inputs.',
   long_description=long_description,
   long_description_content_type='text/markdown',
@@ -39,10 +39,5 @@ setup(
       'Programming Language :: Python :: 3',
       'Programming Language :: Python :: 3.4',
       'Programming Language :: Python :: 3.5',
-  ],
-  entry_points={
-      'console_scripts': [
-          'zeys=zeys.run.runner:main',
-      ],
-  },
+  ]
 )
